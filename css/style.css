@@ -1,0 +1,885 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul,li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    vertical-align: middle;
+}
+/* ========================
+        common css ends
+========================== */
+.common_heading{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 35px;
+    color: var(--head_text);
+    text-transform: capitalize;
+    text-align: center;
+}
+ .common_pera{
+    font-family: var(--opensans);
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--pera_text);
+    text-transform: capitalize;
+    text-align: center;
+    width: 570px;
+    margin: 0 auto;
+}
+.common_shape{
+    width: 100%;
+    height: 100px;
+    background-color: #ffffff;
+    clip-path: polygon(0 100%, 100% 0, 100% 100%, 0% 100%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+:root{
+    --btn:#fec600;
+    --light:#f1f1f1;
+    --white:#ffffff;
+    --btn_text:#222222;
+    --head_text:#111111;
+    --pera_text:#353535;
+    --raleway:'Raleway', sans-serif;
+    --opensans: 'Open Sans', sans-serif;
+}
+/* ========================
+        other css ends
+========================== */
+#menu_part{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index:9999;
+}
+
+#menu_part a{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: capitalize;
+    margin: 0 10px;
+    position: relative;
+    color: var(--white);
+    transition: all linear .5s;
+}
+#menu_part a:hover{
+    color: var(--btn);
+}
+
+#menu_part::after{
+    content: "";
+    width: 100%;
+    border: 1px solid var(--btn);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#menu_part a::before{
+    content: "";
+    width: 100%;
+    border: 3px solid var(--btn);
+    position: absolute;
+    bottom:-19px;
+    left: 0;
+    opacity: 0;
+    transition:  all linear .5s;
+}
+
+#menu_part a:hover::before{
+    opacity: 1;
+}
+#menu_part .navbar-brand::before {
+    display: none;
+}
+/* ========================
+        menu css ends
+========================== */
+#banner{
+    position: relative;
+}
+#banner .banner_img{
+    padding: 220px 0;
+    position: relative;
+    z-index: 1;
+    background: url(../images/banner.png) no-repeat center /cover;
+}
+#banner .banner_img::after{
+    content: '';
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+#banner .text{
+    text-align: center;
+    color: var(--white);
+    position: relative;
+}
+#banner .text h2{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    text-transform: capitalize;
+}
+#banner .text h1{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 55px;
+    text-transform: uppercase;
+    color: var(--btn);
+}
+#banner .text .pera{
+    width: 544px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    text-transform: capitalize;
+    color: var(--white);
+    position: absolute;
+    left: 30%;
+}
+#banner .btn{
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#banner .btn a{
+   padding: 20px 25px;
+    border: 1px solid var(--white);
+    text-align: center;
+    color: var(--white);
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    margin: 0 10px;
+    transition: all linear .5s;
+}
+#banner .btn a:hover{
+    background-color: var(--btn);
+    color: var(--btn_text);
+}
+
+#banner .left-arrow{
+    font-size: 40px;
+    font-weight: 400;
+    color: var(--white);
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    transform: translateX(-50%);
+    z-index: 99;
+    cursor: pointer;
+    transition:  all linear .5s;
+}
+#banner .left-arrow:hover{
+    color: var(--btn);
+}
+#banner .right-arrow{
+    font-size: 40px;
+    font-weight: 400;
+    position: absolute;
+    color: var(--white);
+    top: 50%;
+    right: 0;
+    transform: translateX(-50%);
+    z-index: 99;
+    cursor: pointer;
+    transition:  all linear .5s;
+}
+#banner .right-arrow:hover{
+    color: var(--btn);
+}
+/* ========================
+        banner css ends
+========================== */
+#about{
+    padding-top: 50px;
+}
+#about .text{
+    margin-bottom: 60px;
+}
+
+#about .item{
+    padding-top: 30px;
+    padding-bottom: 70px;
+    background: var(--light);
+    margin-bottom: 30px;
+    position: relative;
+    transition:  all linear .5s;
+}
+#about .item::after {
+	content: '';
+	position: absolute;
+	border-bottom: 40px solid transparent;
+	border-top: 40px solid var(--light);
+	border-left: 40px solid transparent;
+	border-right: 40px solid transparent;
+	bottom: -70px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+#about .item:hover{
+    filter: drop-shadow(5px 5px 10px #333333 );
+}
+#about .item::before {
+	content: '';
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background: var(--head_text);
+	bottom: -63px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+#about .item:hover::before{
+    background: var(--btn);
+} 
+#about .content h2{
+    font-family: var(--raleway);
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--pera_text);
+    text-transform: uppercase;
+    text-align: center;
+    
+}
+#about .item1{
+    transition: all linear .5s;
+}
+#about .item1:hover{
+    filter: drop-shadow(5px 5px 10px #333333 );
+}
+#about .content .pehla {
+	font-family: var(--opensans);
+	font-weight: 400;
+	font-size: 14px;
+	color: var(--pera_text);
+	text-transform: capitalize;
+	text-align: center;
+	width: 415px;
+}
+#about .content{
+    padding: 40px 0;
+    margin: 50px 0;
+    background: var(--light);
+    transition: all linear .5s;
+}
+
+#about .content:hover{
+    filter: drop-shadow(5px 5px 10px #333333 );
+}
+#about  .middle{
+    width: 370px;
+    height: 370px;
+    border-radius: 50%;
+    border: 2px solid var(--btn_text);
+    background: transparent;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#about  .middle .round_pic{
+    width: 330px;
+    height: 330px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/* ========================
+        about css ends
+========================== */
+#portfolio{
+    background: url(../images/portfolio.png) no-repeat center / cover;
+   padding-top: 100px;
+   padding-bottom: 150px;
+    position: relative;
+    z-index: 1;
+}
+
+#portfolio::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+#portfolio .format .common_heading{
+   color: var(--white);
+  
+}
+#portfolio .format .common_pera{
+   color: var(--white);
+  
+}
+#portfolio .format{
+    padding-bottom: 60px;
+}
+#portfolio .img-content{
+    margin-bottom: 30px;
+
+}
+/* ========================
+        portfolio css ends
+========================== */
+#service {
+    position: relative;
+    padding: 100px 0;
+}
+#service .line {
+	width: 1px;
+	height: 658px;
+	background: url(../images/line.png) no-repeat center;
+	position: absolute;
+	bottom: 79px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+#service .item{
+    padding-top: 50px;
+}
+#service .content{
+    display: flex;
+}
+#service .item:nth-child(even) .content{
+    flex-direction: row-reverse;
+}
+
+#service .format{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+#service .format h1{
+    font-family: var(--raleway);
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--head_text);
+    text-transform: uppercase;
+}
+#service .icon{
+    width: 20%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#service .icon .round{
+    width: 70px;
+    height: 70px;
+    background: var(--light);
+    border: 1px solid transparent;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#service .dummy_text{
+    width: 40%;
+    padding: 40px 20px;
+    background: var(--light);
+    position: relative;
+}
+#service .dummy_text::after{
+    content: '';
+    width: 30px;
+    height: 30px;
+    background: var(--light);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    border-radius: 5px;
+    transform: translateX(-50%) rotate(45deg);
+}
+#service .dummy_text p {
+	width: 475px;
+	font-size: 14px;
+	font-weight: 400;
+	font-family: var(--opensans);
+	text-align: center;
+}
+#service .up-arrow{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+   border: 1px solid var(--btn_text);
+   text-align: center;
+   line-height: 30px;
+   position: absolute;
+   top: 30px;
+   left: 50%;
+   transform: translateX(-50%);
+   z-index: 99;
+   cursor: pointer;
+   transition: .4s;
+}
+#service .up-arrow:hover{
+    background: var(--btn);
+}
+#service .down-arrow{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+   border: 1px solid var(--btn_text);
+   text-align: center;
+   line-height: 30px;
+   position: absolute;
+   bottom: -50px;
+   left: 50%;
+   transform: translateX(-50%);
+   z-index: 99;
+   cursor: pointer;
+   transition: .4s;
+}
+#service .down-arrow:hover{
+    background: var(--btn);
+}
+
+/* ========================
+        portfolio css ends
+========================== */
+#note_part{
+    background: url(../images/note.png) no-repeat center / cover;
+    padding: 50px 0;
+    position: relative;
+    z-index: 1;
+}
+#note_part .main{
+    display: flex;
+    justify-content: space-between;
+}
+#note_part::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+#note_part .img-item{
+    width:100px ;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--btn);
+    margin: 40px 0;
+    overflow: hidden;
+}
+
+#note_part .content{
+    margin-top: 130px;
+    height: 280px;
+    background: var(--light);
+    position: relative;
+}
+#note_part .content::after{
+    content: '';
+    width: 30px;
+    height: 30px;
+    background-color: var(--light);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateX(-50%) rotate(45deg);
+}
+#note_part .content .text{
+    margin-left: 20px;
+    padding-top: 40px;
+}
+#note_part .content .text h2{
+    text-transform: capitalize;
+    font-family: var(--raleway);
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--head_text);
+}
+#note_part .content .text h3{
+    font-family: var(--raleway);
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--pera_text);
+}
+#note_part .content .text p {
+	font-family: var(--opensans);
+	font-weight: 400;
+	font-size: 14px;
+	color: var(--pera_text);
+	width: 775px;
+}
+#note_part .content .text .icon i{
+    color: var(--btn);
+}
+#note_part .up-arrow{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--light);
+    color: var(--light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 43px;
+    cursor: pointer;
+    transition: .4s;
+}
+#note_part .up-arrow:hover{
+    background: var(--btn);
+    color: var(--head_text);
+}
+#note_part .down-arrow{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--light);
+    color: var(--light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40px;
+    cursor: pointer;
+    transition: .4s;
+}
+#note_part .down-arrow:hover{
+    background: var(--btn);
+    color: var(--head_text);
+}
+#notepart .img_slider{
+    z-index: 9999;
+}
+#note_part .container{
+    position: relative;
+}
+#note_part .container .line {
+	background: url(../images/line-white.png) no-repeat center;
+	height: 549px;
+	width: 1px;
+	position: absolute;
+	bottom: 30px;
+	left: 58px;
+}
+/* ========================
+        note css ends
+========================== */
+#pricing .item{
+    margin: 60px 0;
+    background-color: var(--btn_text);
+    height: 450px;
+    position: relative;
+}
+#pricing .item h1{
+    color: var(--light);
+    text-align: center;
+    font-family: var(--raleway);
+    font-weight: 500;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding-top: 10px;
+    
+}
+#pricing .item .content{
+    margin-top: 60px;
+    height: 300px;
+    background-color: var(--light);
+    position: relative;
+}
+#pricing .item .content .round {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	border: 1px solid var(--btn_text);
+	background: var(--light);
+	position: absolute;
+	top: -40px;
+	left: 50%;
+	transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#pricing .item .content .round .circle{
+    width: 85px;
+	height: 85px;
+	border-radius: 50%;
+	background: var(--head_text);
+    color: var(--white);
+    text-align: center;
+}
+#pricing .item .content .round .circle p{
+    font-size: 29px;
+    font-weight: 400;
+}
+#pricing .item .content .round .circle .per{
+    font-family: var(--raleway);
+    font-weight: 300;
+    font-size: 12px;
+    text-transform: capitalize;
+}
+#pricing .item .content .pera{
+    padding-top: 70px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: var(--opensans);
+    text-transform: capitalize;
+}
+#pricing .item h2{
+    color: var(--white);
+    font-size: 16px;
+    font-family: var(--raleway);
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 10px;
+}
+#pricing .middle{
+    background-color:var(--btn);
+}
+#pricing .middle .content .round .circle{
+    background: var(--btn);
+}
+
+/* ========================
+        pricing css ends
+========================== */
+#count_part{
+    background: var(--btn_text);
+    padding: 40px 0;
+}
+#count_part .main{
+    display: flex;
+    justify-content: space-between;
+}
+#count_part .item{
+    width: 18%;
+    height: 130px;
+    border: 1px solid var(--white);
+    transform: skewX(-5deg);
+}
+#count_part .item .text{
+    color: var(--light);
+    text-align: center;
+    padding: 30px 0;
+}
+#count_part .item .text span{
+    font-family: var(--raleway);
+    font-weight: 500;
+    font-size: 30px;
+}
+#count_part .item .text h3{
+    font-family: var(--raleway);
+    font-weight: 500;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+/* ========================
+        count_part css ends
+========================== */
+#team{
+    margin: 50px 0;
+}
+#team .item{
+    margin-top: 60px;
+    background: var(--light);
+    border: 1px solid var(--head_text);
+    text-align: center;
+    padding-bottom: 30px;
+    position: relative;
+}
+
+#team .item .top-item{
+    height: 270px;
+    padding-top: 20px;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 76%, 0% 100%);  
+}
+
+#team .item .top-item::after{
+    content: '';
+   width: 100%;
+   height: 100%;
+   background: rgba(254, 199, 0, 0.6);
+   position: absolute;
+   inset: 0;
+   opacity: 0;
+   transition: .4s;
+}
+#team .item .top-item:hover::after{
+    opacity: 1;
+}
+#team .item .bottom-item{
+    text-transform: capitalize;
+    text-align: center;
+}
+#team .item .bottom-item h2{
+    font-size: 20px;
+    font-weight: 500;
+    font-family: var(--raleway);
+}
+#team .item .bottom-item p{
+    font-size: 16px;
+    font-weight: 400;
+    font-family: var(--raleway);
+}
+#team .item .bottom-item .content{
+    background: var(--light);
+    position: relative;
+    z-index: 99;
+}
+#team .item .bottom-item .icon{
+    margin-top: -50px;
+    transition: .4s;
+}
+#team .item:hover .icon{
+    margin-top: 0px;
+}
+#team .item .bottom-item .icon i{
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--btn_text);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  color: var(--btn_text);
+}
+/* ========================
+        team css ends
+========================== */
+#theme{
+    margin-top: 60px;
+    background: var(--light);
+    padding: 35px;
+}
+
+#theme .main{
+    display: flex;
+    justify-content: space-between;
+}
+#theme .item{
+    width: 18%;
+    border: 1px solid var(--head_text);
+    height: 120px;
+    transform: skewX(-5deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* ========================
+        theme css ends
+========================== */
+#footer{
+    background: var(--btn_text);
+   padding-top: 100px;
+   position: relative;
+}
+#footer::before{
+    content: '';
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    position: absolute;
+    top: 37%;
+    left: 0;
+
+}
+#footer .logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#footer .item{
+    position: relative;
+    margin-top: 60px;
+}
+#footer .item .icon{
+    text-align: center;
+}
+#footer .item .icon i{
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 50%;
+    background-color: var(--btn);
+    line-height: 30px;
+    color: var(--btn_text);
+}
+#footer .item .text{
+    padding-top: 10px;
+    color: var(--white);
+    text-align: center;
+    font-family: var(--raleway);
+    font-weight: 500;
+    font-size: 16px;
+}
+#footer .item::after{
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    right: 0;
+    top: 0;
+}
+#footer .last::after{
+    display: none;
+}
+#footer .item .text span{
+    display: inline-block;
+}
+#footer .content{
+    color: var(--light);
+    text-align: center;
+    padding-top: 60px;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+    padding-bottom: 30px;
+}
+#footer .content i{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--light);
+    line-height: 30px;
+    color: var(--btn_text);
+    margin-left: 10px;
+}
+/* ========================
+        footer css ends
+========================== */
+#footer_last{
+    background: var(--pera_text);
+    padding: 10px 0;
+}
+#footer_last .text{
+    font-size: 14px;
+    font-family: var(--opensans);
+    font-weight: 400;
+    color: var(--light);
+    text-align: center;
+}
+#footer_last .text span{
+    color: var(--btn);
+}
+/* ========================
+        footer_last css ends
+========================== */
